@@ -7,6 +7,7 @@ use Mix.Config
 
 # General application configuration
 config :curtain_with,
+  api_key: System.get_env("API_KEY"),
   ecto_repos: [CurtainWith.Repo]
 
 # Configures the endpoint

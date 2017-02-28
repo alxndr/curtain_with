@@ -1,9 +1,9 @@
 defmodule CurtainWith.SetlistView do
   use CurtainWith.Web, :view
 
-  def render("show.json", %{date: date}) do
+  def render("show.json", %{data: data}) do
     %{
-      date: date,
+      data: data,
     }
   end
 end

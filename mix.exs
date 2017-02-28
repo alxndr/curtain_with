@@ -21,6 +21,7 @@ defmodule CurtainWith.Mixfile do
      applications: [
        :cowboy,
        :gettext,
+       :httpoison,
        :logger,
        :phoenix,
        # :phoenix_ecto,
@@ -41,11 +42,13 @@ defmodule CurtainWith.Mixfile do
     [
       {:cowboy, "~> 1.0"},
       {:gettext, "~> 0.11"},
+      {:httpoison, "~> 0.10.0"},
       {:phoenix, "~> 1.2.1"},
       # {:phoenix_ecto, "~> 3.0"},
       {:phoenix_html, "~> 2.6"},
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:phoenix_pubsub, "~> 1.0"},
+      {:poison, "~> 3.0", override: true},
       # {:postgrex, ">= 0.0.0"},
     ]
   end

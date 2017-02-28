@@ -61,8 +61,3 @@ config :logger, level: :info
 
 config :curtain_with, CurtainWith.Endpoint,
   secret_key_base: System.get_env("SECRET_KEY_BASE")
-
-# config :curtain_with, CurtainWith.Repo,
-#   adapter: Ecto.Adapters.Postgres,
-#   url: System.get_env("DATABASE_URL"),
-#   pool_size: 20

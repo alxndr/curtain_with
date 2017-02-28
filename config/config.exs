@@ -22,6 +22,11 @@ config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
 
+# config :curtain_with, CurtainWith.Repo,
+#   adapter: Ecto.Adapters.Postgres,
+#   url: System.get_env("DATABASE_URL"),
+#   pool_size: 20
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"

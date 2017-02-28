@@ -18,11 +18,11 @@ defmodule CurtainWith.Web do
 
   def model do
     quote do
-      use Ecto.Schema
+      # use Ecto.Schema
 
-      import Ecto
-      import Ecto.Changeset
-      import Ecto.Query
+      # import Ecto
+      # import Ecto.Changeset
+      # import Ecto.Query
     end
   end
 
@@ -31,8 +31,8 @@ defmodule CurtainWith.Web do
       use Phoenix.Controller
 
       alias CurtainWith.Repo
-      import Ecto
-      import Ecto.Query
+      # import Ecto
+      # import Ecto.Query
 
       import CurtainWith.Router.Helpers
       import CurtainWith.Gettext
@@ -66,8 +66,8 @@ defmodule CurtainWith.Web do
       use Phoenix.Channel
 
       alias CurtainWith.Repo
-      import Ecto
-      import Ecto.Query
+      # import Ecto
+      # import Ecto.Query
       import CurtainWith.Gettext
     end
   end

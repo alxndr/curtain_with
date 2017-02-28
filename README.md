@@ -6,22 +6,32 @@
 
 2. Add buildpacks:
 
-    $ heroku buildpacks:add https://github.com/HashNuke/heroku-buildpack-elixir
-    $ heroku buildpacks:add https://github.com/gjaldon/phoenix-static-buildpack
+```bash
+$ heroku buildpacks:add https://github.com/HashNuke/heroku-buildpack-elixir
+$ heroku buildpacks:add https://github.com/gjaldon/phoenix-static-buildpack
+```
 
 3. If you need Postgres, add it to Heroku:
 
-    $ heroku addons:create heroku-postgresql
+```bash
+$ heroku addons:create heroku-postgresql
+```
 
 4. Set required environment variables on Heroku:
 
-    $ heroku config:set SECRET_KEY_BASE=<key>
+```bash
+$ heroku config:set API_KEY=`<api_key>`
+```
 
 5. Create/Migrate databases:
 
-    $ heroku run mix ecto.create
-    $ heroku run mix ecto.migrate
+```bash
+$ heroku run mix ecto.create
+$ heroku run mix ecto.migrate
+```
 
 6. Run it:
 
-    $ heroku open
+```bash
+$ heroku open
+```

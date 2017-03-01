@@ -41,6 +41,7 @@ defmodule CurtainWith.Mixfile do
   defp deps do
     [
       {:cowboy, "~> 1.0"},
+      {:floki, "~> 0.14.0"},
       {:gettext, "~> 0.11"},
       {:httpoison, "~> 0.10.0"},
       {:phoenix, "~> 1.2.1"},

@@ -78,17 +78,20 @@ defmodule CurtainWith.SetlistController do
     IO.inspect floki_tuple
   end
 
-  def build_song_map(song_title, %{"title" => title_attribute}) do
+  def build_song_map(song_title, %{"title" => title_attribute, "href" => href_attribute}) do
     just_the_title = Regex.replace(~r{ -?>$}, song_title, "")
     title_attribute = String.trim(title_attribute)
-    a_map = if title_attribute === just_the_title do
-      %{title: just_the_title}
+    %{
+      title: just_the_title,
+      href: href_attribute,
+    }
+    |> Map.merge(
+    if title_attribute === just_the_title do
+      %{}
     else
-      %{
-        title: just_the_title,
-        notes: title_attribute,
-      }
-    end
+      %{notes: title_attribute}
+    end)
+    |> Map.merge(
     cond do
       String.ends_with?(song_title, " ->") ->
         %{segue: "->"}
@@ -96,8 +99,7 @@ defmodule CurtainWith.SetlistController do
         %{segue: ">"}
       true ->
         %{}
-    end
-    |> Map.merge(a_map)
+    end)
   end
 
   def append(list, element) do

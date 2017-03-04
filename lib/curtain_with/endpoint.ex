@@ -38,5 +38,9 @@ defmodule CurtainWith.Endpoint do
     key: "_curtain_with_key",
     signing_salt: "g3YZrFkR"
 
+  # allow CORS requests
+  # https://github.com/mschae/cors_plug thanks Michael
+  plug CORSPlug
+
   plug CurtainWith.Router
 end

@@ -40,6 +40,7 @@ defmodule CurtainWith.Mixfile do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:cors_plug, "~> 1.2"},
       {:cowboy, "~> 1.0"},
       {:floki, "~> 0.14.0"},
       {:gettext, "~> 0.11"},

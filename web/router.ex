@@ -9,4 +9,8 @@ defmodule CurtainWith.Router do
     pipe_through :api
     get "/setlists/get", SetlistController, :show
   end
+
+  scope "/", CurtainWith do
+    resources "/houses", HouseController
+  end
 end

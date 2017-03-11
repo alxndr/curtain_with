@@ -9,7 +9,7 @@ defmodule CurtainWith do
     # Define workers and child supervisors to be supervised
     children = [
       # Start the Ecto repository
-      # supervisor(CurtainWith.Repo, []),
+      supervisor(CurtainWith.Repo, []),
       # Start the endpoint when the application starts
       supervisor(CurtainWith.Endpoint, []),
       # Start your own worker by calling: CurtainWith.Worker.start_link(arg1, arg2, arg3)

@@ -9,9 +9,10 @@ defmodule CurtainWith.HouseController do
   end
 
   def create(conn, %{"house" => house_params}) do
-    changeset = House.changeset(%House{}, house_params)
-
-    case Repo.insert(changeset) do
+    %House{}
+    |> House.changeset(house_params)
+    |> Repo.insert
+    |> case do
       {:ok, house} ->
         conn
         |> put_status(:created)

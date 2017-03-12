@@ -30,6 +30,16 @@ defmodule CurtainWith.HouseController do
     render(conn, "show.json", house: house)
   end
 
+  def find(conn, %{"name" => name}) do
+    name
+    |> House.find_by_name
+    |> Repo.one
+    |> case do
+      nil   -> render(conn, "show.json", house: nil)
+      house -> render(conn, "show.json", house: house)
+    end
+  end
+
   def update(conn, %{"id" => id, "house" => house_params}) do
     house = Repo.get!(House, id)
     changeset = House.changeset(house, house_params)

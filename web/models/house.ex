@@ -15,5 +15,6 @@ defmodule CurtainWith.House do
     struct
     |> cast(params, [:name, :book])
     |> validate_required([:name, :book])
+    |> unique_constraint(:name)
   end
 end

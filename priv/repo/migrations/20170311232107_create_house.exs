@@ -9,5 +9,6 @@ defmodule CurtainWith.Repo.Migrations.CreateHouse do
       timestamps()
     end
 
+    create unique_index(:houses, [:name])
   end
 end

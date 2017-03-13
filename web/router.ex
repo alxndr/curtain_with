@@ -12,6 +12,9 @@ defmodule CurtainWith.Router do
 
   scope "/", CurtainWith do
     resources "/houses", HouseController
+    options "/houses", HouseController, :options
+    options "/houses/:id", HouseController, :options
+
     get "/house/find", HouseController, :find # `/house` so we don't conflict with the resources ^
   end
 end

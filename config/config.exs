@@ -12,8 +12,6 @@ config :curtain_with,
 
 # Configures the endpoint
 config :curtain_with, CurtainWith.Endpoint,
-  url: [host: "localhost"],
-  secret_key_base: "yRjdI4wb/OGmdKcfKLVbNFblPYI3gb33M4muX3N4h1jsJvNdbHtnMMyuf3wcZPc0",
   render_errors: [view: CurtainWith.ErrorView, accepts: ~w(html json)],
   pubsub: [name: CurtainWith.PubSub,
            adapter: Phoenix.PubSub.PG2]

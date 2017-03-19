@@ -56,6 +56,10 @@ config :logger, level: :info
 #     config :curtain_with, CurtainWith.Endpoint, server: true
 #
 
+config :curtain_with, CurtainWith.Endpoint,
+  http: [port: {:system, "PORT"}],
+  url: [host: "curtain-with.herokuapp.com", port: 80]
+
 # don't import config/prod.secret.exs; configure with environment variables instead.
 # http://wsmoak.net/2015/07/12/phoenix-and-ecto-from-mix-new-to-heroku.html
 

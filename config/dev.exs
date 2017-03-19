@@ -7,7 +7,9 @@ use Mix.Config
 # watchers to your application. For example, we use it
 # with brunch.io to recompile .js and .css sources.
 config :curtain_with, CurtainWith.Endpoint,
+  url: [host: "localhost"],
   http: [port: 4000],
+  secret_key_base: "yRjdI4wb/OGmdKcfKLVbNFblPYI3gb33M4muX3N4h1jsJvNdbHtnMMyuf3wcZPc0",
   debug_errors: true,
   code_reloader: true,
   check_origin: false,

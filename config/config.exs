@@ -26,7 +26,7 @@ config :logger, :console,
 config :curtain_with, CurtainWith.Repo,
   adapter: Ecto.Adapters.Postgres,
   url: System.get_env("DATABASE_URL"),
-  pool_size: 20
+  pool_size: String.to_integer(System.get_env("POOL_SIZE") || "18")
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

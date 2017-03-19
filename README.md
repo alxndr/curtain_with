@@ -41,8 +41,9 @@ $ heroku config:set API_KEY=<api_key> DATABASE_URL=<database_url>
 5. Create/Migrate databases:
 
 ```bash
-$ heroku run mix ecto.create
-$ heroku run mix ecto.migrate
+$ heroku config:set POOL_SIZE=18 # to leave 2 open on free plan for migrations
+# don't need to create; the DB already exists on Heroku
+$ heroku run "POOL_SIZE=2 MIX_ENV=prod mix ecto.migrate"
 ```
 
 6. Run it:
